@@ -1,0 +1,1 @@
+java -jar ManKalah.jar "nc -l localhost 12345" "java -jar MKRefAgent.jar"
