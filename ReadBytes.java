@@ -2,6 +2,7 @@ import java.util.Random;
 import java.io.FileWriter;   // Import the FileWriter class
 import java.io.File;
 import java.util.*;  
+import java.io.PrintWriter;
 
 // Consider that we start south always for now, we will return a bot which 
 // does the options in a normal way without causing exceptions.
@@ -20,6 +21,16 @@ public class ReadBytes
         fr.write(str + "\n");
         fr.close();
 
+        String state = str.replace("CHANGE;", "");
+
+        // if(state.contains("YOU")){
+        //     System.out.println("It is our turn");
+        // } else if(state.contains("OPP")){
+        //     System.out.println("It is opponent's turn");
+        // } else{
+        //     System.out.println("Unknown, start or end state");
+        // }
+
         String[] optionStrings = {"MOVE;1","MOVE;2", "MOVE;3","MOVE;4","MOVE;5","MOVE;6","MOVE;7","SWAP"};
 
         Random random = new Random();
@@ -31,6 +42,12 @@ public class ReadBytes
 
     public static void main(String[] args) throws Exception
     {
+
+        //Clears response from game engine
+        PrintWriter pw = new PrintWriter("out.txt");
+        pw.print("");
+        pw.close();
+
 
         System.out.println("MOVE;1");
         ReadBytes readBytes = new ReadBytes();

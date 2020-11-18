@@ -56,17 +56,6 @@ public class RandomBot
 
     public String makeRandomMove()
     {
-
-    	// StringBuilder message = new StringBuilder();
-    	// int newCharacter;
-
-      // do
-    	// {
-    	// 	newCharacter = input.read();
-    	// 	if (newCharacter == -1)
-    	// 		throw new EOFException("Input ended unexpectedly.");
-    	// 	message.append((char)newCharacter);
-      // } while((char)newCharacter != '\n');
       
       Random rand = new Random(); 
 
