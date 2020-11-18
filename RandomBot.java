@@ -3,6 +3,7 @@ import java.io.EOFException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.Reader;
+import java.util.Random; 
 
 /**
  * The main application class. It also provides methods for communication
@@ -14,6 +15,12 @@ public class RandomBot
      * Input from the game engine.
      */
     private static Reader input = new BufferedReader(new InputStreamReader(System.in));
+
+    private boolean isOurTurn = false;
+
+    private String[] optionStrings = {"MOVE;1","MOVE;2", "MOVE;3","MOVE;4","MOVE;5","MOVE;6","MOVE;7","SWAP"};
+
+    private int choiceNumber = 0;
 
     /**
      * Sends a message to the game engine.
@@ -47,12 +54,38 @@ public class RandomBot
 		return message.toString();
     }
 
-	/**
-	 * The main method, invoked when the program is started.
-	 * @param args Command line arguments.
-	 */
-	public static void main(String[] args)
-	{
-        System.out.println("Test print");
-	}
+    public String makeRandomMove()
+    {
+
+    	// StringBuilder message = new StringBuilder();
+    	// int newCharacter;
+
+      // do
+    	// {
+    	// 	newCharacter = input.read();
+    	// 	if (newCharacter == -1)
+    	// 		throw new EOFException("Input ended unexpectedly.");
+    	// 	message.append((char)newCharacter);
+      // } while((char)newCharacter != '\n');
+      
+      Random rand = new Random(); 
+
+      RandomBot randomBot = new RandomBot();
+
+      randomBot.choiceNumber = rand.nextInt(7);
+
+      return randomBot.optionStrings[randomBot.choiceNumber];
+    }
+
+    /**
+     * The main method, invoked when the program is started.
+     * @param args Command line arguments.
+     */
+    public static void main(String[] args)
+    {
+        RandomBot randomBot = new RandomBot();
+        while(true){
+          System.out.println(randomBot.makeRandomMove());
+        }
+    }
 }
