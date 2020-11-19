@@ -20,8 +20,10 @@ public class ReadBytes
         
         fr.write(str + "\n");
         fr.close();
+        
+        // String state = str.replace("CHANGE;", "");
 
-        String state = str.replace("CHANGE;", "");
+        // System.out.println(state);
 
         // if(state.contains("YOU")){
         //     System.out.println("It is our turn");

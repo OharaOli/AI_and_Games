@@ -1,1 +1,1 @@
-java -jar ManKalah.jar "java RandomBot" "java -jar MKRefAgent.jar"
+java -jar ManKalah.jar "java -jar RandomBot.jar" "java -jar MKRefAgent.jar"
