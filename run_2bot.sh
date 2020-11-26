@@ -1,1 +1,1 @@
-java -jar ManKalah.jar "java -jar MKRefAgent.jar" "java -jar MKRefAgent.jar"
+java -jar ManKalah.jar "python3 randombot.py" "python3 randombot.py"

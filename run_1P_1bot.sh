@@ -1,1 +1,1 @@
-java -jar ManKalah.jar "nc localhost 12345" "java -jar MKRefAgent.jar"
+java -jar ManKalah.jar "java -jar MKRefAgent.jar" "nc localhost 12345"
